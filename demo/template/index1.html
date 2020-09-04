@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>教师登录页</title>
+		<link rel="stylesheet" href="../static/style/index.css" />
+
+	</head>
+	<body>
+		<form action="index1/professor" method="post">
+			<div class="form-item", id="form-item">
+				<nav>
+					<div id="top1">
+						<li>
+							<a href="index">Administrator</a>
+						</li>
+						<li>
+							<a href="index1" id="cur">Professor</a>
+						</li>
+						<li>
+							<a href="index2">Bachelor</a>
+						</li>
+					</div>
+				</nav>
+				<div class="user">
+					<p>USER</p>
+					<input type="text" name="username" id="username" placeholder="请输入学工号" />
+				</div>
+
+				<div class="pass">
+					<p>PASSWORD</p>
+					<input type="text" name="password" id="password" placeholder="请输入密码" />
+				</div>
+
+				<div class="submit">
+					<input type="submit" value="确定" />
+				</div>
+				<input type="hidden" name="hid" value="index1" />
+			</div>
+		</form>
+	</body>
+</html>

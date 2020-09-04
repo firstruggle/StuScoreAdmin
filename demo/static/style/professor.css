@@ -1,0 +1,122 @@
+* { margin: 0; padding: 0; }
+body,html{
+    height: 100%;
+}
+.form-item{
+    height: 100%;
+    width: 100%;
+    background:url(../image/yourname.jpg) no-repeat fixed;
+    background-size: cover;
+    position: fixed;
+    opacity: .75;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a[id='cur']{
+    color: deepskyblue;
+}
+.form-item li{
+    float: left;
+    list-style: none;
+    font: 25px fantasy;
+}
+.form-item #top1{
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    background-color:rgba(255,255,255,0.4);
+}
+.form-item #top1 li[class="tp"]{
+    position: relative;
+    left: 35%;
+    text-align: center;
+    border-right: 1px solid black;
+    border-radius: 30px;
+    margin: 0px 20px;
+}
+.form-item #top1 li a:hover{
+    color: greenyellow;
+}
+.form-item #top1 li[id="adname"]{
+    position: fixed;
+    top: 2px;
+    right: 7%;
+}
+.form-item #top1 li[id="out"]{
+    position: fixed;
+    right: 1%;
+    top: 0.5%;
+    font-size:20px;
+}
+
+.form-item #top1 li[id="id"]{
+    position: fixed;
+    left: 39%;
+    top: 55%;
+    font-size: bolder 20px;
+}
+.form-item #L{
+    position: fixed;
+    background-color:rgba(255,255,255,0.4);
+    left: 12%;
+    top: 20%;
+    height: 63%;
+    font-size: 30px;
+}
+.form-item p{
+    text-align: center;
+    margin: 15px 15px;
+}
+.form-item #L #img{
+    float: left;
+}
+.form-item #L #txt{
+    float: right;
+}
+.form-item #R{
+    position: fixed;
+    background-color:rgba(255,255,255,0.4);
+    left: 60%;
+    top: 20%;
+    height: 63%;
+    width: 30%;
+    font-size: 30px;
+}
+.form-item #R li{
+    margin: 5px 5px;
+    position: relative;
+    left: 10%;
+}
+.form-item #R input[type="text"]{
+    position: relative;
+    margin: 10px 10px;
+    top: 20%;
+    right: -10%;
+    height: 30px;
+    width: 50%;
+    border-radius: 20px;
+    font-size: 15px;
+    outline: none;
+}
+.form-item #R input[type="submit"]{
+    height: 35px;
+    width: 80px;
+    position: relative;
+    left: 30%;
+    color: papayawhip;
+    background: linear-gradient(papayawhip, green);
+    font-size: 15px;
+    border: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    margin: 20px 20px;
+}
+.form-item #L a{
+    color: deepskyblue;
+}
+.form-item #L a:hover{
+    color: greenyellow;
+}

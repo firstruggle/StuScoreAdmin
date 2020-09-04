@@ -1,0 +1,78 @@
+* { margin: 0; padding: 0; }
+body,html{
+    height: 100%;
+}
+.form-item{
+    height: 100%;
+    width: 100%;
+    background:url(../image/yourname.jpg) no-repeat fixed;
+    background-size: cover;
+    position: fixed;
+    opacity: .75;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a[id='cur']{
+    color: deepskyblue;
+}
+.form-item li{
+    float: left;
+    list-style: none;
+    font: 25px fantasy;
+}
+.form-item #top1{
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    background-color:rgba(255,255,255,0.4);
+}
+.form-item #top1 li[class="tp"]{
+    position: relative;
+    left: 35%;
+    text-align: center;
+    border-right: 1px solid black;
+    border-radius: 30px;
+    margin: 0px 20px;
+}
+.form-item #top1 li a:hover{
+    color: greenyellow;
+}
+.form-item #top1 li[id="adname"]{
+    position: fixed;
+    top: 2px;
+    right: 7%;
+}
+.form-item #top1 li[id="out"]{
+    position: fixed;
+    right: 1%;
+    top: 0.5%;
+    font-size:20px;
+}
+.form-item #part2{
+    position: fixed;
+    left: 40%;
+    top: 18%;
+}
+.form-item #part2 p{
+    font-size: 20px;
+}
+.form-item #part2 input[type="text"]{
+    height: 30px;
+    width: 300px;
+    border-radius: 15px;
+    outline: none;
+}
+.form-item #part2 input[type="submit"]{
+    height: 35px;
+    width: 80px;
+    position: fixed;
+    left: 47%;
+    color: papayawhip;
+    background: linear-gradient(papayawhip, green);
+    font-size: 15px;
+    border: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+}

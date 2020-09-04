@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>恭迎管理员大人</title>
+		<link rel="stylesheet" href="../static/style/admin.css" />
+
+	</head>
+	<script language="javascript">
+		function check() {
+			var x = document.getElementById('one').value;
+			var y = document.getElementById('two').value;
+			if (x == "create") {
+				if (y == 'stuinfo') {
+					document.ac.action = "admin/createstu";//注意对于form来说必需用name
+				} else if (y == 'teacherinfo') {
+					document.ac.action = "admin/createteacher";
+				} else if (y == 'courseinfo') {
+					document.ac.action = "admin/createcourse";
+				}
+			} else if (x == 'retrieve') {
+				if (y == 'stuinfo') {
+					document.ac.action = "admin/retrievestu";
+				} else if (y == 'teacherinfo') {
+					document.ac.action = "admin/retrieveteacher";
+				} else if (y == 'courseinfo') {
+					document.ac.action = "admin/retrievecourse";
+				}
+			} else if (x == 'update') {
+				if (y == 'stuinfo') {
+					document.ac.action = "admin/updatestu";
+				} else if (y == 'teacherinfo') {
+					document.ac.action = "admin/updateteacher";
+				} else if (y == 'courseinfo') {
+					document.ac.action = "admin/updatecourse";
+				}
+			} else if (x == 'delete') {
+				document.ac.action = "admin";
+				if (y == 'stuinfo') {
+					document.getElementById('del').value = 'delstu';
+					alert('成功删除该学生信息');
+				} else if (y == 'teacherinfo') {
+					document.getElementById('del').value = 'delteacher';
+					alert('成功删除该教师信息');
+				} else if (y == 'courseinfo') {
+					document.getElementById('del').value = 'delcourse';
+					alert('成功删除该课程信息');
+				}
+			} else if (x == 'canvas' && y == 'courseinfo') {
+				document.ac.action = "admin/statistic";
+			}
+			return true;
+		}
+	</script>
+	<body>
+		<form action="../index2" method="post" name="ac">
+			<div class="form-item", id="form-item">
+				<div id="top1">
+					<li class="tp">
+						<a href="../index" id="cur">Administrator</a>
+					</li>
+					<li class="tp">
+						<a href="../index1">Professor</a>
+					</li>
+					<li class="tp">
+						<a href="../index2">Bachelor</a>
+					</li>
+					<li id="adname">{{adname}}</li>
+					<li id="out">
+						<a href="../index">退出登录</a>
+					</li>
+				</div>
+				<select id="one">
+					<option value="0">请开始你的操作</option>
+					<option value="create">新建信息</option>
+					<option value="retrieve">查询信息</option>
+					<option value="update">修改信息</option>
+					<option value="delete">删除信息</option>
+					<option value="canvas">统计信息</option>
+				</select>
+				<br /><br /><br />
+				<select id="two">
+					<option value="1">请选择操作对象</option>
+					<option value="teacherinfo">厚德博学的学术园丁</option>
+					<option value="stuinfo">敬业乐群的后浪花朵</option>
+					<option value="courseinfo">罄竹难书的CS课程</option>
+				</select>
+				<br />
+			    <li id="id">ID:</li>
+				<input type="text" name='id' id="final" placeholder="输入此人学工号或此课程ID" />
+				<input type="submit" id="sub" value="Click" onclick="return check();" />
+				<input type="hidden" name="hid" id="del" value="del" />
+				<input type="hidden" name="Ad" value={{adname}} />
+			</div>
+		</form>
+	</body>
+</html>

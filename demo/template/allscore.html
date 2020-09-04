@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>所有学生成绩</title>
+        <link rel="stylesheet" href="../../static/style/allscore.css" />
+        <script>
+            document.write("<div class='form-item'>");
+            var t = JSON.parse('{{t|safe}}');
+            var s = JSON.parse('{{s|safe}}');
+            for (var i = 0; i < t.length; i++) {
+                document.write("<p>" + t[i] + ": " + s[i] + "</p>");
+            }
+            document.write("</div");
+        </script>
+    </head>
+    <body>
+<!--    <div class="form-item"><p>{{data}}</p></div>-->
+    </body>
+</html>

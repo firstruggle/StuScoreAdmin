@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>教师界面</title>
+		<link rel="stylesheet" href="../static/style/professor.css" />
+	</head>
+	<script language="javascript">
+		function check(){
+<!--		一个很有趣的事情是函数名绝不可以是click()否则会无效-->
+			var x = JSON.parse('{{f|safe}}');
+			var y = document.getElementById('cid').value;
+			for (var i in x) {
+				if (x == y) {
+					alert('修改学生成绩成功');
+					return true;
+				}
+			}
+			alert('您无权修改本课程成绩');
+			return true;
+		}
+		function doPost(to, e) {
+        	var myForm = document.createElement("form");
+        	myForm.method = "post";
+        	myForm.action = to;
+			var myInput = document.createElement("input");
+			myInput.setAttribute("name", 'e');  // 为input对象设置name
+			myInput.setAttribute("value", e);  // 为input对象设置value
+			myForm.appendChild(myInput);
+			document.body.appendChild(myForm);
+			myForm.submit();
+			document.body.removeChild(myForm);  // 提交后移除创建的form
+        }
+	</script>
+	<body>
+		<form action="professor" name="ac" method="post">
+			<div class="form-item", id="form-item">
+				<div id="top1">
+					<li class="tp">
+						<a href="../index">Administrator</a>
+					</li>
+					<li class="tp">
+						<a href="../index1" id="cur">Professor</a>
+					</li>
+					<li class="tp">
+						<a href="../index2">Bachelor</a>
+					</li>
+					<li id="adname">{{adname}}</li>
+					<li id="out">
+						<a href="../index1">退出登录</a>
+					</li>
+				</div>
+				<div id="L">
+					<p>教师基本信息</p>
+					<br />
+					<div id="img">
+						<img src="../static/image/qiao.jpg"/>
+					</div>
+					<div id="txt">
+						<p>教工号：{{a}}</p>
+						<p>姓名：{{b}}</p>
+						<p>性别：{{c}}</p>
+						<p>所在院系：{{d}}</p>
+						<p>所授课程：<a target="_blank" href="javascript:doPost('professor/allscore', {{e}})">{{e}}</a></p>
+					</div>
+				</div>
+				<div id="R">
+					<p>修改学生成绩</p>
+					<br /><br />
+					<div id="R2">
+						<li>课程：</li>
+						<input type="text" id="cid" name="cid" placeholder="请输入课程号" />
+						<br />
+						<li>学生：</li>
+						<input type="text" name="stu" placeholder="请输入学生学号" />
+						<br />
+						<li>成绩：</li>
+						<input type="text" name="score" placeholder="请输入学生成绩" />
+						<br />
+						<input type="submit" value="提交" onclick="return check();" />
+					</div>
+				</div>
+			</div>
+			<input type="hidden" name="hid" value="pro" />
+			<input type="hidden" name="a" value={{a}} />
+			<input type="hidden" name="b" value={{b}} />
+			<input type="hidden" name="c" value={{c}} />
+			<input type="hidden" name="d" value={{d}} />
+			<input type="hidden" name="e" value={{e}} />
+			<input type="hidden" name="f" value={{f}} />
+		</form>
+	</body>
+</html>

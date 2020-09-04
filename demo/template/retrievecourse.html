@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>查询课程</title>
+		<link rel="stylesheet" href="../../static/style/retrievestu.css" />
+<!--		这里注意一手层级是按照网页来的而不是文件夹-->
+	</head>
+	<body>
+        <div class="form-item", id="form-item">
+            <div id="top1">
+                <li class="tp">
+                    <a href="../../index" id="cur">Administrator</a>
+                </li>
+                <li class="tp">
+                    <a href="../../index1">Professor</a>
+                </li>
+                <li class="tp">
+                    <a href="../../index2">Bachelor</a>
+                </li>
+                <li id="adname">{{adname}}</li>
+                <li id="out">
+                    <a href="../../">退出登录</a>
+                </li>
+            </div>
+           <div id="part2">
+                <p>课程号：{{a}}</p>
+                <p>课程名：{{b}}</p>
+                <p>学时：{{c}}</p>
+                <p>学分：{{d}}</p>
+                <p>授课教师：{{e}}</p>
+            </div>
+        </div>
+	</body>
+</html>

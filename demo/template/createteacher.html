@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>喜提♂新老师</title>
+		<link rel="stylesheet" href="../../static/style/createstu.css" />
+<!--		这里注意一手层级是按照网页来的而不是文件夹-->
+	</head>
+	<script>
+		function Success() {
+			alert("新建教师信息成功");
+			return true;
+		}
+	</script>
+	<body>
+		<form action="../admin" method="post" onsubmit="return Success();">
+			<div class="form-item", id="form-item">
+				<div id="top1">
+					<li class="tp">
+						<a href="../../index" id="cur">Administrator</a>
+					</li>
+					<li class="tp">
+						<a href="../../index1">Professor</a>
+					</li>
+					<li class="tp">
+						<a href="../../index2">Bachelor</a>
+					</li>
+					<li id="adname">{{adname}}</li>
+					<li id="out">
+						<a href="../../">退出登录</a>
+					</li>
+				</div>
+				<div id="part2">
+					<p>教工号：</p>
+					<input type="text" name='a' placeholder="请输入教师教工号" />
+					<p>姓名：</p>
+					<input type="text" name='b' placeholder="请输入教师姓名" />
+					<p>性别：</p>
+					<input type="text" name='c' placeholder="请输入教师性别" />
+					<p>院系：</p>
+					<input type="text" name='d' placeholder="请输入教师所在专业" />
+					<p>所授课程：</p>
+					<input type="text" name='e' placeholder="请输入课程号" />
+					<p>密码：</p>
+					<input type="text" name="f" placeholder="请输入账号密码" />
+					<br /><br />
+					<input type="submit" value="创建" />
+					<input type="hidden" name="hid" value="createteacher" />
+				</div>
+			</div>
+		</form>
+	</body>
+</html>
